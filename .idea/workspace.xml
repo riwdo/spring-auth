@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5794d887-eec6-45f2-a3cf-ffcad7612cd7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/Greeting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/GreetingController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/WebappApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/WebappApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/projects/webapp/WebappApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/projects/webapp/WebappApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,8 +75,8 @@
     </option>
     <option name="myId2Visible">
       <map>
-        <entry key="JPA Inspector" value="true" />
-        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Inspector" value="false" />
+        <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
       </map>
     </option>
@@ -212,7 +212,7 @@
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AuthenticationControllerTest">
+  <component name="RunManager" selected="JUnit.WebappApplicationTests">
     <configuration name="WebappApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="KEY_STORE_PASSWORD" value="jAg*2Ib*2arpArAmarkes16" />
@@ -316,11 +316,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WebappApplicationTests" />
         <item itemvalue="JUnit.AuthenticationControllerTest" />
         <item itemvalue="Application.WebappApplication" />
         <item itemvalue="JUnit.AuthenticationControllerTest.whenExistingUserRegister_thenReturns200" />
         <item itemvalue="JUnit.AuthenticationControllerTest.whenValidInput_thenReturns200" />
-        <item itemvalue="JUnit.WebappApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -453,7 +453,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>22</line>
+          <line>26</line>
           <properties class="com.projects.webapp.AuthenticationController" method="signUp">
             <option name="EMULATED" value="true" />
           </properties>
@@ -461,17 +461,17 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>23</line>
+          <line>29</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>24</line>
+          <line>30</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>12</line>
+          <line>14</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
@@ -516,7 +516,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>14</line>
+          <line>16</line>
           <properties field="userRepository" class="com.projects.webapp.AuthenticationController" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>

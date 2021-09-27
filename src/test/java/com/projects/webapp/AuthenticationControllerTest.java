@@ -22,11 +22,23 @@ public class AuthenticationControllerTest {
     @MockBean
     private UserRepository userRepository;
 
+    private User createMockUser(String name, String password) {
+        User user = new User();
+        user.setName(name);
+        user.setPassword(password);
+        return user;
+    }
+
+    private LoginForm createMockLoginForm(String name, String password) {
+        LoginForm loginForm = new LoginForm();
+        loginForm.setUsername(name);
+        loginForm.setPassword(password);
+        return loginForm;
+    }
+
     @Test
     void whenNewUserRegistered_thenReturns201() throws Exception {
-        LoginForm loginForm = new LoginForm();
-        loginForm.setUsername("oscar");
-        loginForm.setPassword("test");
+        LoginForm loginForm = createMockLoginForm("oscar", "test");
 
         this.mockMvc.perform(post("/signUp")
                 .contentType("application/json")
@@ -36,15 +48,10 @@ public class AuthenticationControllerTest {
 
     @Test
     void whenExistingUserRegister_thenReturns409() throws Exception {
-        LoginForm loginForm = new LoginForm();
-        loginForm.setUsername("oscar");
-        loginForm.setPassword("test");
+        LoginForm loginForm = createMockLoginForm("oscar", "test");
+        User user = createMockUser("oscar", "test");
 
-        User user = new User();
-        user.setName("oscar");
-        user.setPassword("test");
-
-        when(userRepository.getByName("oscar")).thenReturn(user);
+        when(userRepository.getByName(loginForm.getUsername())).thenReturn(user);
         this.mockMvc.perform(post("/signUp")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(loginForm)))
@@ -54,11 +61,9 @@ public class AuthenticationControllerTest {
 
     @Test
     void whenUserNotExistLogin_thenReturns404() throws Exception {
-        LoginForm loginForm = new LoginForm();
-        loginForm.setUsername("oscar");
-        loginForm.setPassword("test");
+        LoginForm loginForm = createMockLoginForm("oscar", "test");
 
-        when(userRepository.getByName("oscar")).thenReturn(null);
+        when(userRepository.getByName(loginForm.getUsername())).thenReturn(null);
         this.mockMvc.perform(post("/signIn")
                 .contentType("application/json")
                 .content(objectMapper.writeValueAsString(loginForm)))
@@ -67,15 +72,10 @@ public class AuthenticationControllerTest {
 
     @Test
     void whenUserExistLogin_thenReturns200() throws Exception {
-        LoginForm loginForm = new LoginForm();
-        loginForm.setUsername("oscar");
-        loginForm.setPassword("test");
+        LoginForm loginForm = createMockLoginForm("oscar", "test");
+        User user = createMockUser("oscar", "test");
 
-        User user = new User();
-        user.setName("oscar");
-        user.setPassword("test");
-
-        when(userRepository.getByName("oscar")).thenReturn(user);
+        when(userRepository.getByName(loginForm.getUsername())).thenReturn(user);
         this.mockMvc.perform(post("/signIn")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(loginForm)))
@@ -84,15 +84,10 @@ public class AuthenticationControllerTest {
 
     @Test
     void whenUserExistLoginWrongPassword_thenReturns401() throws Exception {
-        LoginForm loginForm = new LoginForm();
-        loginForm.setUsername("oscar");
-        loginForm.setPassword("test");
+        LoginForm loginForm = createMockLoginForm("oscar", "test");
+        User user = createMockUser("oscar", "testar");
 
-        User user = new User();
-        user.setName("oscar");
-        user.setPassword("testar");
-
-        when(userRepository.getByName("oscar")).thenReturn(user);
+        when(userRepository.getByName(loginForm.getUsername())).thenReturn(user);
         this.mockMvc.perform(post("/signIn")
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(loginForm)))
