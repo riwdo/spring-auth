@@ -1,6 +1,8 @@
 package com.projects.webapp;
 
 import io.jsonwebtoken.Jwts;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,19 +14,21 @@ public class AuthenticationController {
 
   private UserRepository userRepository;
 
+  @Autowired
   public AuthenticationController(UserRepository userRepository) {
     this.userRepository = userRepository;
   }
 
   @PostMapping(path = "/signUp")
-  public Authentication signUp(@RequestBody LoginForm loginForm) {
+  public ResponseEntity<Authentication> signUp(@RequestBody LoginForm loginForm) {
     String username = loginForm.getUsername();
     String password = loginForm.getPassword();
-    System.out.println("test");
+
     User user = userRepository.getByName(username);
 
     if (user != null) {
-      return new Authentication("User already exists");
+      System.out.println("user exists");
+      return new ResponseEntity<>(new Authentication("User already exists"), HttpStatus.CONFLICT);
     }
 
     User newUser = new User();
@@ -33,11 +37,11 @@ public class AuthenticationController {
     newUser.setPassword(password);
     userRepository.save(newUser);
 
-    return new Authentication("Created user!");
+    return new ResponseEntity<>(new Authentication("Created user!"), HttpStatus.CREATED);
   }
 
   @PostMapping(path = "/signIn")
-  public ResponseEntity<?> signIn(@RequestBody LoginForm loginForm) {
+  public ResponseEntity<Authentication> signIn(@RequestBody LoginForm loginForm) {
     String username = loginForm.getUsername();
     String password = loginForm.getPassword();
 
@@ -45,13 +49,13 @@ public class AuthenticationController {
     User user = userRepository.getByName(username);
 
     if (user == null) {
-      return ResponseEntity.ok("User does not exist");
+      return new ResponseEntity<>(new Authentication("User does not exist"), HttpStatus.NOT_FOUND);
     }
 
     if (user.getPassword().equals(password)) {
-      return ResponseEntity.ok(new JwtResponse(jwt));
+      return new ResponseEntity<>(new Authentication(jwt), HttpStatus.OK);
     }
-    return ResponseEntity.ok("Password incorrect");
+    return new ResponseEntity<>(new Authentication("Password incorrect"), HttpStatus.UNAUTHORIZED);
   }
 
 
