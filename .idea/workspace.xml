@@ -7,9 +7,7 @@
     <list default="true" id="5794d887-eec6-45f2-a3cf-ffcad7612cd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +207,7 @@
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JwtUtilTests.tokenGenerationNullUser_shouldThrowException">
+  <component name="RunManager" selected="Application.WebappApplication">
     <configuration name="WebappApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="KEY_STORE_PASSWORD" value="jAg*2Ib*2arpArAmarkes16" />
@@ -222,6 +220,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticationControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.projects.webapp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.projects.webapp" />
+      <option name="MAIN_CLASS_NAME" value="com.projects.webapp.AuthenticationControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -242,7 +255,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JwtUtilTests.testTokenGenerationValidation" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="JwtUtilTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
         <pattern>
@@ -252,24 +265,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.projects.webapp.unitTests" />
       <option name="MAIN_CLASS_NAME" value="com.projects.webapp.unitTests.JwtUtilTests" />
-      <option name="METHOD_NAME" value="testTokenGenerationValidation" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="JwtUtilTests.tokenGenerationNullUser_shouldThrowException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.projects.webapp.unitTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.projects.webapp.unitTests" />
-      <option name="MAIN_CLASS_NAME" value="com.projects.webapp.unitTests.JwtUtilTests" />
-      <option name="METHOD_NAME" value="tokenGenerationNullUser_shouldThrowException" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -307,18 +303,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.WebappApplication" />
-      <item itemvalue="JUnit.WebappApplicationTests" />
       <item itemvalue="JUnit.AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" />
-      <item itemvalue="JUnit.JwtUtilTests.testTokenGenerationValidation" />
-      <item itemvalue="JUnit.JwtUtilTests.tokenGenerationNullUser_shouldThrowException" />
+      <item itemvalue="JUnit.AuthenticationControllerTest" />
+      <item itemvalue="JUnit.JwtUtilTests" />
+      <item itemvalue="JUnit.WebappApplicationTests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JwtUtilTests.tokenGenerationNullUser_shouldThrowException" />
-        <item itemvalue="JUnit.JwtUtilTests.testTokenGenerationValidation" />
-        <item itemvalue="JUnit.AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" />
         <item itemvalue="Application.WebappApplication" />
         <item itemvalue="JUnit.WebappApplicationTests" />
+        <item itemvalue="JUnit.JwtUtilTests" />
+        <item itemvalue="JUnit.AuthenticationControllerTest" />
+        <item itemvalue="JUnit.AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" />
       </list>
     </recent_temporary>
   </component>
@@ -449,29 +445,6 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>29</line>
-          <properties class="com.projects.webapp.AuthenticationController" method="signUp">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>14</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.9/spring-beans-5.3.9.jar!/org/springframework/beans/factory/support/AbstractBeanFactory.class</url>
           <line>226</line>
@@ -509,18 +482,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/JwtUtil.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java</url>
-          <line>16</line>
-          <properties field="userRepository" class="com.projects.webapp.AuthenticationController" />
-          <option name="timeStamp" value="8" />
+          <line>33</line>
+          <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java</url>
-          <line>23</line>
+          <line>22</line>
           <properties field="jwtUtil" class="com.projects.webapp.AuthenticationControllerTest" />
           <option name="timeStamp" value="45" />
         </line-breakpoint>

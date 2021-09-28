@@ -1,15 +1,12 @@
 package com.projects.webapp;
 
-import io.jsonwebtoken.Jwts;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Date;
-import java.util.UUID;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 public class AuthenticationController {
@@ -27,7 +24,7 @@ public class AuthenticationController {
   }
 
   @PostMapping(path = "/signUp")
-  public ResponseEntity<Authentication> signUp(@RequestBody LoginForm loginForm) {
+  public ResponseEntity<String> signUp(@RequestBody LoginForm loginForm) {
     logger.info("Request to create user: {}", loginForm);
 
     String username = loginForm.getUsername();
@@ -37,7 +34,7 @@ public class AuthenticationController {
 
     if (user != null) {
       logger.info("User already exists!");
-      return new ResponseEntity<>(new Authentication("User already exists"), HttpStatus.CONFLICT);
+      throw new ResponseStatusException(HttpStatus.CONFLICT, "User already exists");
     }
 
     User newUser = new User();
@@ -47,11 +44,11 @@ public class AuthenticationController {
     userRepository.save(newUser);
     logger.info("User created!");
 
-    return new ResponseEntity<>(new Authentication("Created user!"), HttpStatus.CREATED);
+    return new ResponseEntity<>("Created user!", HttpStatus.CREATED);
   }
 
   @PostMapping(path = "/signIn")
-  public ResponseEntity<Authentication> signIn(@RequestBody LoginForm loginForm) {
+  public ResponseEntity<JwtResponse> signIn(@RequestBody LoginForm loginForm) {
     logger.info("Request to login user: {}", loginForm);
 
     String username = loginForm.getUsername();
@@ -62,32 +59,35 @@ public class AuthenticationController {
 
     if (user == null) {
       logger.info("User does not exist!");
-      return new ResponseEntity<>(new Authentication("User does not exist"), HttpStatus.NOT_FOUND);
+      throw new ResponseStatusException(HttpStatus.NOT_FOUND, "User does not exist");
     }
 
     if (user.getPassword().equals(password)) {
       logger.info("User logged in!");
-      return new ResponseEntity<>(new Authentication(jwt), HttpStatus.OK);
+      return new ResponseEntity<>(new JwtResponse(jwt), HttpStatus.OK);
     }
 
     logger.info("Provided password is incorrect");
-    return new ResponseEntity<>(new Authentication("Password incorrect"), HttpStatus.UNAUTHORIZED);
+    throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Password incorrect");
   }
 
   @PostMapping(path = "/authenticationTest")
-  public ResponseEntity<Authentication> authenticationTest(@RequestHeader("Authorization") String authHeader) {
-    String[] authParams = authHeader.split(" ");
-    // Check valid header bearer
-    if (authParams[0] != null && authParams[0].equals("Bearer")) {
-      String token = authParams[1];
-      String username = jwtUtil.getUsernameFromToken(token);
-      User user = userRepository.getByName(username);
-      if (jwtUtil.validateToken(token, user)) {
-        return new ResponseEntity<>(new Authentication("Success!"), HttpStatus.OK);
+  public ResponseEntity<String> authenticationTest(@RequestHeader("Authorization") String authHeader) {
+    try {
+      String[] authParams = authHeader.split(" ");
+      // Check valid header bearer
+      if (authParams[0] != null && authParams[0].equals("Bearer")) {
+        String token = authParams[1];
+        String username = jwtUtil.getUsernameFromToken(token);
+        User user = userRepository.getByName(username);
+        if (jwtUtil.validateToken(token, user)) {
+          return new ResponseEntity<>("Authorized!", HttpStatus.OK);
+        }
       }
+    } catch (Exception exo) {
+      throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized!");
     }
-    return new ResponseEntity<>(new Authentication("Failed!"), HttpStatus.UNAUTHORIZED);
-
+    throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Unauthorized!");
   }
 
   

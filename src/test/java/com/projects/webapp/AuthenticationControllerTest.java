@@ -1,14 +1,13 @@
 package com.projects.webapp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.jsonwebtoken.Jwts;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.mockito.Mockito.*;
 
 @WebMvcTest(controllers = AuthenticationController.class)
@@ -113,5 +112,13 @@ public class AuthenticationControllerTest {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    void whenUserNotLoggedInAccessAuthPath_thenReturns401() throws Exception {
+        String invalidToken = "token";
+
+        this.mockMvc.perform(post("/authenticationTest")
+                        .header("Authorization",invalidToken))
+                .andExpect(status().isUnauthorized());
+    }
 
 }
