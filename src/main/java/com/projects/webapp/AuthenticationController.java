@@ -16,11 +16,14 @@ public class AuthenticationController {
 
   private UserRepository userRepository;
 
+  private JwtUtil jwtUtil;
+
   Logger logger = LoggerFactory.getLogger(AuthenticationController.class);
 
   @Autowired
-  public AuthenticationController(UserRepository userRepository) {
+  public AuthenticationController(UserRepository userRepository, JwtUtil jwtutil) {
     this.userRepository = userRepository;
+    this.jwtUtil = jwtutil;
   }
 
   @PostMapping(path = "/signUp")
@@ -54,8 +57,8 @@ public class AuthenticationController {
     String username = loginForm.getUsername();
     String password = loginForm.getPassword();
 
-    String jwt = Jwts.builder().setId(UUID.randomUUID().toString()).setExpiration(new Date(System.currentTimeMillis() + 3600000)).compact();
     User user = userRepository.getByName(username);
+    String jwt = jwtUtil.generateToken(user);
 
     if (user == null) {
       logger.info("User does not exist!");
@@ -69,6 +72,22 @@ public class AuthenticationController {
 
     logger.info("Provided password is incorrect");
     return new ResponseEntity<>(new Authentication("Password incorrect"), HttpStatus.UNAUTHORIZED);
+  }
+
+  @PostMapping(path = "/authenticationTest")
+  public ResponseEntity<Authentication> authenticationTest(@RequestHeader("Authorization") String authHeader) {
+    String[] authParams = authHeader.split(" ");
+    // Check valid header bearer
+    if (authParams[0] != null && authParams[0].equals("Bearer")) {
+      String token = authParams[1];
+      String username = jwtUtil.getUsernameFromToken(token);
+      User user = userRepository.getByName(username);
+      if (jwtUtil.validateToken(token, user)) {
+        return new ResponseEntity<>(new Authentication("Success!"), HttpStatus.OK);
+      }
+    }
+    return new ResponseEntity<>(new Authentication("Failed!"), HttpStatus.UNAUTHORIZED);
+
   }
 
   

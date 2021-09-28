@@ -1,6 +1,7 @@
 package com.projects.webapp;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.jsonwebtoken.Jwts;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -18,6 +19,9 @@ public class AuthenticationControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @MockBean
+    private JwtUtil jwtUtil;
 
     @MockBean
     private UserRepository userRepository;
@@ -92,6 +96,21 @@ public class AuthenticationControllerTest {
                         .contentType("application/json")
                         .content(objectMapper.writeValueAsString(loginForm)))
                 .andExpect(status().isUnauthorized());
+    }
+
+    @Test
+    void whenUserLoggedInAccessAuthPath_thenReturns200() throws Exception {
+        User user = createMockUser("oscar", "test");
+
+        String jwt = "test";
+
+        when(jwtUtil.getUsernameFromToken("test")).thenReturn("oscar");
+        when(jwtUtil.validateToken("test", user)).thenReturn(true);
+        when(userRepository.getByName(user.getName())).thenReturn(user);
+
+        this.mockMvc.perform(post("/authenticationTest")
+                .header("Authorization","Bearer " + jwt))
+                .andExpect(status().isOk());
     }
 
 
