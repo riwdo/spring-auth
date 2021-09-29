@@ -1,10 +1,10 @@
-package com.projects.webapp;
+package com.projects.webapp.models;
 
 public class JwtResponse {
 
   private String jwt;
 
-  JwtResponse(String jwt) {
+  public JwtResponse(String jwt) {
     this.jwt = jwt;
   }
 

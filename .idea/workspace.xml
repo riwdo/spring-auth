@@ -6,8 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="5794d887-eec6-45f2-a3cf-ffcad7612cd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/models/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/models/JwtResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/models/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/models/UserEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/projects/webapp/unitTests/JwtUtilTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/projects/webapp/unitTests/JwtUtilTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +47,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/pom.xml" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -216,7 +229,7 @@
       <module name="spring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.projects.webapp.*" />
+          <option name="PATTERN" value="com.projects.webapp.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -228,7 +241,7 @@
       <module name="spring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.projects.webapp.*" />
+          <option name="PATTERN" value="com.projects.webapp.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -239,11 +252,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AuthenticationControllerTest.whenUserExistLogin_thenReturns200" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="spring" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.projects.webapp.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.projects.webapp" />
+      <option name="MAIN_CLASS_NAME" value="com.projects.webapp.AuthenticationControllerTest" />
+      <option name="METHOD_NAME" value="whenUserExistLogin_thenReturns200" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="spring" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.projects.webapp.*" />
+          <option name="PATTERN" value="com.projects.webapp.controllers.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -270,21 +299,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebappApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.projects.webapp.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.projects.webapp" />
-      <option name="MAIN_CLASS_NAME" value="com.projects.webapp.WebappApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="WebappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.projects.webapp.WebappApplication" />
@@ -306,14 +320,14 @@
       <item itemvalue="JUnit.AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" />
       <item itemvalue="JUnit.AuthenticationControllerTest" />
       <item itemvalue="JUnit.JwtUtilTests" />
-      <item itemvalue="JUnit.WebappApplicationTests" />
+      <item itemvalue="JUnit.AuthenticationControllerTest.whenUserExistLogin_thenReturns200" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.WebappApplication" />
-        <item itemvalue="JUnit.WebappApplicationTests" />
-        <item itemvalue="JUnit.JwtUtilTests" />
         <item itemvalue="JUnit.AuthenticationControllerTest" />
+        <item itemvalue="JUnit.AuthenticationControllerTest.whenUserExistLogin_thenReturns200" />
+        <item itemvalue="JUnit.JwtUtilTests" />
         <item itemvalue="JUnit.AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" />
       </list>
     </recent_temporary>
@@ -479,17 +493,6 @@
           <url>jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.3.9/spring-beans-5.3.9.jar!/org/springframework/beans/factory/support/DefaultListableBeanFactory.class</url>
           <line>1035</line>
           <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/projects/webapp/JwtUtil.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-field">
-          <url>file://$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java</url>
-          <line>22</line>
-          <properties field="jwtUtil" class="com.projects.webapp.AuthenticationControllerTest" />
-          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

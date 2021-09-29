@@ -1,14 +1,14 @@
-package com.projects.webapp;
+package com.projects.webapp.models;
 
 public class LoginForm {
   private String username;
   private String password;
 
-  LoginForm() {
+  public LoginForm() {
 
   }
 
-  LoginForm(String username, String password) {
+  public LoginForm(String username, String password) {
     this.username = username;
     this.password = password;
   }

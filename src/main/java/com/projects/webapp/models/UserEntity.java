@@ -1,10 +1,10 @@
-package com.projects.webapp;
+package com.projects.webapp.models;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "USERS")
-public class User {
+public class UserEntity {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

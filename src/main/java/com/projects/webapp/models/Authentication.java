@@ -1,4 +1,4 @@
-package com.projects.webapp;
+package com.projects.webapp.models;
 
 public class Authentication {
   private String text;
