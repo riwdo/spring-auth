@@ -1,6 +1,10 @@
 version: "3.7"
 
 services:
+  app:
+    image: auth-client
+    ports:
+      - 3000:3000
   server:
     image: spring-auth
     environment:
