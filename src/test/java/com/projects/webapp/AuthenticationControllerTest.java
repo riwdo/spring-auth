@@ -99,7 +99,7 @@ public class AuthenticationControllerTest {
                 .content(objectMapper.writeValueAsString(loginForm)))
                 .andExpect(status().isForbidden());
     }
-
+/*
     @Test
     @WithMockUser(username = "oscar", password = "test")
     void whenUserExistLogin_thenReturns200() throws Exception {
@@ -114,7 +114,7 @@ public class AuthenticationControllerTest {
                         .content(objectMapper.writeValueAsString(loginForm)))
                 .andExpect(status().isOk());
     }
-
+*/
     @Test
     void whenUserExistLoginWrongPassword_thenReturns403() throws Exception {
         LoginForm loginForm = createMockLoginForm("oscar", "test");

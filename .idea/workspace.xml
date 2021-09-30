@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="spring:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5794d887-eec6-45f2-a3cf-ffcad7612cd7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/spring.iml" beforeDir="false" afterPath="$PROJECT_DIR$/spring.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/models/Authentication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/JwtResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/models/JwtResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/utils/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/models/LoginForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/models/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/projects/webapp/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/projects/webapp/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/projects/webapp/AuthenticationControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/projects/webapp/unitTests/JwtUtilTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/projects/webapp/unitTests/JwtUtilTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/keystore.p12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-com.projects.webapp.WebappApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-com.projects.webapp.WebappApplicationTests.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/com.projects.webapp.WebappApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/com.projects.webapp.WebappApplicationTests.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +212,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.customizations" />
@@ -268,36 +271,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.projects.webapp.controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.projects.webapp" />
-      <option name="MAIN_CLASS_NAME" value="com.projects.webapp.AuthenticationControllerTest" />
-      <option name="METHOD_NAME" value="whenUserLoggedInAccessAuthPath_thenReturns200" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="spring.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/out/artifacts/spring_jar/spring.jar" />
+      <method v="2" />
     </configuration>
-    <configuration name="JwtUtilTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="spring" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.projects.webapp.unitTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.projects.webapp.unitTests" />
-      <option name="MAIN_CLASS_NAME" value="com.projects.webapp.unitTests.JwtUtilTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="webapp-0.0.1-SNAPSHOT.jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/target/webapp-0.0.1-SNAPSHOT.jar" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <envs>
+        <env name="KEY_STORE_PASSWORD" value="jAg*2Ib*2arpArAmarkes16" />
+      </envs>
+      <method v="2" />
     </configuration>
     <configuration name="WebappApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="spring" />
@@ -317,18 +301,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.WebappApplication" />
-      <item itemvalue="JUnit.AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" />
+      <item itemvalue="JAR Application.spring.jar" />
+      <item itemvalue="JAR Application.webapp-0.0.1-SNAPSHOT.jar" />
       <item itemvalue="JUnit.AuthenticationControllerTest" />
-      <item itemvalue="JUnit.JwtUtilTests" />
       <item itemvalue="JUnit.AuthenticationControllerTest.whenUserExistLogin_thenReturns200" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.WebappApplication" />
+        <item itemvalue="JAR Application.webapp-0.0.1-SNAPSHOT.jar" />
+        <item itemvalue="JAR Application.spring.jar" />
         <item itemvalue="JUnit.AuthenticationControllerTest" />
         <item itemvalue="JUnit.AuthenticationControllerTest.whenUserExistLogin_thenReturns200" />
-        <item itemvalue="JUnit.JwtUtilTests" />
-        <item itemvalue="JUnit.AuthenticationControllerTest.whenUserLoggedInAccessAuthPath_thenReturns200" />
       </list>
     </recent_temporary>
   </component>

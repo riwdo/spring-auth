@@ -1,0 +1,27 @@
+version: "3.7"
+
+services:
+  server:
+    image: spring-auth
+    environment:
+      SERVER_SSL_KEY_STORE: ./keystore.p12
+      KEY_STORE_PASSWORD: ${KEY_STORE_PASSWORD}
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/spring_auth?autoReconnect=true
+      SPRING_DATASOURCE_PASSWORD: ${DATASOURCE_PASSWORD}
+    ports:
+      - 8080:8080
+    depends_on:
+      - mysql
+  mysql:
+    platform: linux/x86_64
+    image: mysql:5.7
+    volumes:
+      - spring-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DATASOURCE_PASSWORD}
+      MYSQL_DATABASE: spring_auth
+    ports:
+      - 3306:3306
+
+volumes:
+  spring-mysql-data:
